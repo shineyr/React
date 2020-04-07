@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+
+        function greeting(user) {
+            if (user) {
+                return <h1> Hello, {formatName(user)}! </h1>;
+            }
+
+            return <h1> Hello, Stranger! </h1>;
+        }
+
+        const user = {
+            firstName: 'Ria',
+            lastName: 'Yang'
+        };
+
+        const element = greeting(user);
+
+        ReactDOM.render(
+            element,
+            document.getElementById('root')
+        );
+    </script>
+  </body>
+</html>
