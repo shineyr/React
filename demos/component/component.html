@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    // 定义函数组件Welcome, 接收唯一带有数据的 “props”（代表属性）对象与并返回一个 React 元素
+    function Welcome(props) {
+        return <h1> Hello, {props.name}! </h1>;
+    }
+
+    // class 组件
+    class Hello extends React.Component {
+        render() {
+            return <h1> Hello, {this.props.name}! </h1>
+        }
+    }
+
+    // 使用React自定义组件 声明元素 渲染组件
+    const element =  <div> 
+            <Welcome name='Ria'/>
+            <Hello name='Ming' />
+        </div>;
+
+    ReactDOM.render(
+        element,
+        document.getElementById('root')
+    );
+
+    </script>
+  </body>
+</html>
